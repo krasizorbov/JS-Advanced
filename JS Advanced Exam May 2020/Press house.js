@@ -75,6 +75,8 @@ function solution(input = []) {
   }
   return { Article, ShortReports, BookReview };
 }
+
+// Input Data
 let classes = solution();
 let lorem = new classes.Article(
   "Lorem",
