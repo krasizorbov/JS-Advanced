@@ -73,6 +73,7 @@ class Bank {
   }
 }
 
+// Input Data
 let bank = new Bank("SoftUni Bank");
 console.log(
   bank.newCustomer({
