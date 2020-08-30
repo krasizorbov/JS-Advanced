@@ -57,7 +57,7 @@ class Bank {
   }
 
   customerInfo(personalId) {
-    const customer = this.allCustomers.find((c) => (c.personalId = personalId));
+    const customer = this.allCustomers.find((c) => (c.personalId === personalId));
     if (customer === undefined) {
       throw new Error(`We have no customer with this ID!`);
     } else {
