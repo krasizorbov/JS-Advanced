@@ -76,6 +76,7 @@ function solution() {
   return { Pet, Cat, Dog };
 }
 
+// Input Data
 let classes = solution();
 let pet = new classes.Pet("Ann", "Merry");
 console.log(pet.addComment("likes bananas"));
