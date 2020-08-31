@@ -56,6 +56,7 @@ function solution() {
       this.performer = [];
     }
 
+    // hallEvent а не hallEvents както са го написали!!! Копи пейст ще ти изиграе шегичка!!!
     hallEvent(title, performers) {
       if (this.events.includes(title)) {
         throw new Error(`This event is already added!`);
