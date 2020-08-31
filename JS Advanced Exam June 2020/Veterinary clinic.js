@@ -21,7 +21,7 @@ class VeterinaryClinic {
       this.clinic[ownerName].push({
         name: petName,
         kind: kind,
-        procedures: Array.from(procedures),
+        procedures: procedures,
       });
     } else {
       this.clinic[ownerName].forEach((obj) => {
