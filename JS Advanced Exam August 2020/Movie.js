@@ -10,30 +10,22 @@ class Movie {
 
   newScreening(date, hall, description) {
     let obj = { date: date, hall: hall, desc: description };
-    let exists = false;
-    for (let i = 0; i < this.screenings.length; i++) {
-      if (
-        this.screenings[i].date === date &&
-        this.screenings[i].hall === hall
-      ) {
-        exists = true;
-        throw new Error(`Sorry, ${hall} hall is not available on ${date}`);
-      }
-    }
-    if (exists === false) {
+    let screen = this.screenings.find(
+      (o) => o.date === date && o.hall === hall
+    );
+    if (screen === undefined) {
       this.screenings.push(obj);
       return `New screening of ${this.movieName} is added.`;
+    } else {
+      throw new Error(`Sorry, ${hall} hall is not available on ${date}`);
     }
   }
 
   endScreening(date, hall, soldTickets) {
-    let exists = false;
-    this.screenings.forEach((o) => {
-      if (o.date === date && o.hall === hall) {
-        exists = true;
-      }
-    });
-    if (exists === false) {
+    let screen = this.screenings.find(
+      (o) => o.date === date && o.hall === hall
+    );
+    if (screen === undefined) {
       throw new Error(
         `Sorry, there is no such screening for ${this.movieName} movie.`
       );
