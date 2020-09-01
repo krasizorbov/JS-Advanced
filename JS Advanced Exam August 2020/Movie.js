@@ -1,8 +1,7 @@
-// 1 и 6 тест гърмят
 class Movie {
   constructor(movieName, ticketPrice) {
     this.movieName = movieName;
-    this.ticketPrice = ticketPrice;
+    this.ticketPrice = Number(ticketPrice);
     this.screenings = [];
     this.totalProfit = 0;
     this.ticketsCount = 0;
@@ -51,7 +50,7 @@ class Movie {
   toString() {
     let result = [
       `${this.movieName} full information:`,
-      `Total profit: ${this.totalProfit}$`,
+      `Total profit: ${this.totalProfit.toFixed(0)}$`,
       `Sold Tickets: ${this.ticketsCount}`,
     ];
     if (this.screenings.length > 0) {
