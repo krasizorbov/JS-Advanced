@@ -19,26 +19,14 @@ function solve() {
     if (taskInput !== "" && descriptionInput !== "" && dateInput !== "") {
       let article = document.createElement("article");
 
-      let h3 = document.createElement("h3");
-      h3.textContent = taskInput;
-      let p1 = document.createElement("p");
-      p1.textContent = "Description: " + descriptionInput;
-      let p2 = document.createElement("p");
-      p2.textContent = "Due Date: " + dateInput;
-      let div = document.createElement("div");
-      div.classList.add("flex");
+      let h3 = ce("h3", taskInput);
+      let p1 = ce("p", `Description: ${descriptionInput}`);
+      let p2 = ce("p", `Due Date: ${dateInput}`);
+      let div = ce("div", "", "flex");
 
-      let startBtn = document.createElement("button");
-      let deleteBtn = document.createElement("button");
-      let finishBtn = document.createElement("button");
-
-      startBtn.classList.add("green");
-      deleteBtn.classList.add("red");
-      finishBtn.classList.add("orange");
-
-      startBtn.textContent = "Start";
-      deleteBtn.textContent = "Delete";
-      finishBtn.textContent = "Finish";
+      let startBtn = ce("button", "Start", "green");
+      let deleteBtn = ce("button", "Delete", "red");
+      let finishBtn = ce("button", "Finish", "orange");
 
       div.appendChild(startBtn);
       div.appendChild(deleteBtn);
@@ -64,4 +52,18 @@ function solve() {
       });
     }
   });
+
+  function ce(el, text, className, id) {
+    let e = document.createElement(el);
+    if (text) {
+      e.textContent = text;
+    }
+    if (className) {
+      e.classList = className;
+    }
+    if (id) {
+      e.id = id;
+    }
+    return e;
+  }
 }
