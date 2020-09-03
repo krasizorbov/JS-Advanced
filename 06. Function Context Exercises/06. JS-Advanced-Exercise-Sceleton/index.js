@@ -5,7 +5,6 @@ function solve() {
 
   function highLightRow(e) {
     const change = e.target.parentNode;
-    console.log(change);
     if (change.nodeName === "TR") {
       if (change.style.backgroundColor !== "") {
         change.style.backgroundColor = "";
