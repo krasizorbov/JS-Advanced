@@ -25,16 +25,12 @@ function solve() {
     }
     let li = document.createElement("li");
     let p = document.createElement("p");
-    let strong1 = document.createElement("strong");
-    strong1.textContent = name.value;
-    let strong2 = document.createElement("strong");
-    strong2.textContent = age.value;
-    let strong3 = document.createElement("strong");
-    strong3.textContent = kind.value;
-    let span = document.createElement("span");
-    span.textContent = "Owner: " + owner.value;
-    let button = document.createElement("button");
-    button.textContent = "Contact with owner";
+    let strong1 = ce("strong", name.value);
+    let strong2 = ce("strong", age.value);
+    let strong3 = ce("strong", kind.value);
+    let span = ce("span", `Owner: ${owner.value}`);
+    let button = ce("button", "Contact with owner");
+
     p.appendChild(strong1);
     p.innerHTML += " is a ";
     p.appendChild(strong2);
@@ -54,8 +50,7 @@ function solve() {
       let div = document.createElement("div");
       let input = document.createElement("input");
       input.placeholder = "Enter your names";
-      let changeBtn = document.createElement("button");
-      changeBtn.textContent = "Yes! I take it!";
+      let changeBtn = ce("button", "Yes! I take it!");
 
       div.appendChild(input);
       div.appendChild(changeBtn);
@@ -64,10 +59,8 @@ function solve() {
 
       changeBtn.addEventListener("click", function (e) {
         if (input.value !== "") {
-          let newspan = document.createElement("span");
-          newspan.textContent = "New Owner: " + input.value;
-          let checkedBtn = document.createElement("button");
-          checkedBtn.textContent = "Checked";
+          let newspan = ce("span", `New Owner: ${input.value}`);
+          let checkedBtn = ce("button", "Checked");
           let parentDiv = e.target.parentNode;
           let parent = parentDiv.parentNode;
           parentDiv.removeChild(input);
@@ -86,4 +79,17 @@ function solve() {
       });
     });
   });
+  function ce(el, text, className, id) {
+    let e = document.createElement(el);
+    if (text) {
+      e.textContent = text;
+    }
+    if (className) {
+      e.classList = className;
+    }
+    if (id) {
+      e.id = id;
+    }
+    return e;
+  }
 }
