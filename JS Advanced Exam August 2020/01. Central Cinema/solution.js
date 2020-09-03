@@ -21,16 +21,12 @@ function solve() {
     } else {
       let li = document.createElement("li");
       let div = document.createElement("div");
-      let span1 = document.createElement("span");
-      span1.textContent = name.value;
-      let strong1 = document.createElement("strong");
-      strong1.textContent = "Hall: " + hall.value;
-      let strong2 = document.createElement("strong");
-      strong2.textContent = price.value;
+      let span1 = ce("span", name.value);
+      let strong1 = ce("strong", `Hall: ${hall.value}`);
+      let strong2 = ce("strong", price.value);
       let input = document.createElement("input");
       input.placeholder = "Tickets Sold";
-      let archiveBtn = document.createElement("button");
-      archiveBtn.textContent = "Archive";
+      let archiveBtn = ce("button", "Archive");
       div.appendChild(strong2);
       div.appendChild(input);
       div.appendChild(archiveBtn);
@@ -48,8 +44,7 @@ function solve() {
           return;
         } else {
           li.removeChild(div);
-          let deleteBtn = document.createElement("button");
-          deleteBtn.textContent = "Delete";
+          let deleteBtn = ce("button", "Delete");
           strong1.textContent =
             "Total amount: " +
             (Number(input.value) * Number(strong2.textContent)).toFixed(2);
@@ -68,4 +63,17 @@ function solve() {
   clearBtn.addEventListener("click", function (e) {
     archiveSection.innerHTML = "";
   });
+  function ce(el, text, className, id) {
+    let e = document.createElement(el);
+    if (text) {
+      e.textContent = text;
+    }
+    if (className) {
+      e.classList = className;
+    }
+    if (id) {
+      e.id = id;
+    }
+    return e;
+  }
 }
