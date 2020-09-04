@@ -79,6 +79,7 @@ function solve() {
       });
     });
   });
+
   function ce(el, text, className, id) {
     let e = document.createElement(el);
     if (text) {

@@ -63,6 +63,7 @@ function solve() {
   clearBtn.addEventListener("click", function (e) {
     archiveSection.innerHTML = "";
   });
+
   function ce(el, text, className, id) {
     let e = document.createElement(el);
     if (text) {
