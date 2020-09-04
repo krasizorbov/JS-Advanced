@@ -6,10 +6,9 @@ function solution() {
     let value = arguments[i];
     result.push({ type: type, value: value });
     if (!count.hasOwnProperty(type)) {
-      count[type] = 1;
-    } else {
-      count[type]++;
+      count[type] = 0;
     }
+    count[type]++;
   }
   result.forEach((obj) => console.log(`${obj.type}: ${obj.value}`));
   let sorted = Object.entries(count).sort((a, b) => b[1] - a[1]);
