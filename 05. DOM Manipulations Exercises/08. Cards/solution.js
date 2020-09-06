@@ -16,8 +16,7 @@ function solve() {
       card1 = e.target;
       if (card1 !== null && card2 !== null) {
         play();
-        card1 = null;
-        card2 = null;
+        [card1, card2] = [null, null];
       }
     })
   );
@@ -31,8 +30,7 @@ function solve() {
       card2 = e.target;
       if (card1 !== null && card2 !== null) {
         play();
-        card1 = null;
-        card2 = null;
+        [card1, card2] = [null, null];
       }
     })
   );
