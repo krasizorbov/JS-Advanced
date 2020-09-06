@@ -16,7 +16,6 @@ function solve() {
       card1 = e.target;
       if (card1 !== null && card2 !== null) {
         play();
-        [card1, card2] = [null, null];
       }
     })
   );
@@ -30,7 +29,6 @@ function solve() {
       card2 = e.target;
       if (card1 !== null && card2 !== null) {
         play();
-        [card1, card2] = [null, null];
       }
     })
   );
@@ -45,5 +43,6 @@ function solve() {
     }
     // 1-ви, 4-ти и 6-ти тест гърмят заради спейса на края на history string!!!
     history.textContent += `[${card1.name} vs ${card2.name}] `;
+    [card1, card2] = [null, null];
   }
 }
