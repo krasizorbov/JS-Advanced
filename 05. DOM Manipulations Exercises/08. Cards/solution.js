@@ -34,10 +34,10 @@ function solve() {
   );
 
   function play() {
-    if (name1 > name2 && card1 !== null && card2 !== null) {
+    if (name1 > name2) {
       card1.style = "border: 2px solid green;";
       card2.style = "border: 2px solid red;";
-    } else if (name1 < name2 && card1 !== null && card2 !== null) {
+    } else if (name1 < name2) {
       card1.style = "border: 2px solid red;";
       card2.style = "border: 2px solid green;";
     }
