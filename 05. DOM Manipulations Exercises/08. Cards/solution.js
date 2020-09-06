@@ -8,6 +8,7 @@ function solve() {
   let card2 = null;
   let name1 = 0;
   let name2 = 0;
+
   Array.from(player1).forEach((p) =>
     p.addEventListener("click", function (e) {
       e.target.src = "images/whiteCard.jpg";
@@ -45,9 +46,6 @@ function solve() {
     } else if (name1 < name2 && card1 !== null && card2 !== null) {
       card1.style = "border: 2px solid red;";
       card2.style = "border: 2px solid green;";
-    } else if (name1 === name2 && card1 !== null && card2 !== null) {
-      card1.style = "";
-      card2.style = "";
     }
     // 1-ви, 4-ти и 6-ти тест гърмят заради спейса на края на history string!!!
     history.textContent += `[${card1.name} vs ${card2.name}] `;
