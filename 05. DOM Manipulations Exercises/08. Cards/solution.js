@@ -49,6 +49,7 @@ function solve() {
       card1.style = "";
       card2.style = "";
     }
+    // 1-ви, 4-ти и 6-ти тест гърмят заради спейса на края на history string!!!
     history.textContent += `[${card1.name} vs ${card2.name}] `;
   }
 }
