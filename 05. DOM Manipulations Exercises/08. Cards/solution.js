@@ -4,10 +4,8 @@ function solve() {
   let [firstSpan, vs, secondSpan] = document.querySelectorAll("span");
   const history = document.getElementById("history");
 
-  let card1 = null;
-  let card2 = null;
-  let name1 = 0;
-  let name2 = 0;
+  let [card1, card2] = [null, null];
+  let [name1, name2] = [0, 0];
 
   Array.from(player1).forEach((p) =>
     p.addEventListener("click", function (e) {
