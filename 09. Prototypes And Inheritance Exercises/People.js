@@ -47,7 +47,9 @@ function solution() {
       this.tasks = ["scheduled a meeting.", "is preparing a quarterly report."];
     }
 
-    getSalary = () => super.getSalary() + this.dividend;
+    getSalary() {
+      return super.getSalary() + this.dividend;
+    }
   }
 
   return { Employee, Junior, Senior, Manager };
