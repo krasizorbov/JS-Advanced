@@ -12,12 +12,11 @@ function solution(input = []) {
   }
   console.log("true");
 }
-// Решение на Vkirivpz
+// Решение на Vkirovpz
 // function solution(input) {
 //   let arr = [];
 //   let rowSum = 0;
 //   let colSum = 0;
-//   let isTrue;
 //   let sum = input[0].reduce((a, c) => a + c, 0);
 //   // filling the matrix
 //   for (let row = 0; row < input.length; row++) {
@@ -32,7 +31,6 @@ function solution(input = []) {
 //     }
 
 //     if (sum !== rowSum || sum !== colSum) {
-//       isTrue = false;
 //       console.log("false");
 //       return;
 //     } else {
