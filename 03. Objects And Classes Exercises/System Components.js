@@ -26,6 +26,7 @@ function solution(input = []) {
     }
   }
 }
+
 solution([
   "SULS | Main Site | Home Page",
   "SULS | Main Site | Login Page",
