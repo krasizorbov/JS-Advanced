@@ -22,12 +22,11 @@ class Forum {
       (u) => u.username === username || u.email === email
     );
     if (!user) {
-      let user = {
-        username,
-        password,
-        email,
-      };
-      this._users.push(user);
+      this._users.push({
+        username: username,
+        password: password,
+        email: email,
+      });
     } else {
       throw new Error("This user already exists!");
     }
@@ -64,7 +63,6 @@ class Forum {
     if (!user || !loggedIn) {
       throw new Error("You should be logged in to post questions");
     }
-
     if (question === "") {
       throw new Error("Invalid question");
     }
