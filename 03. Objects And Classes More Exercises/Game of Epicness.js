@@ -106,6 +106,7 @@ function solution(input = [], battle = []) {
   }
   console.log(result.trim());
 }
+
 solution(
   [
     { kingdom: "Maiden Way", general: "Merek", army: 5000 },

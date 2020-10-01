@@ -1,4 +1,4 @@
-function arenaTier(input = []) {
+function solution(input = []) {
   let result = {};
   for (let i = 0; i < input.length; i++) {
     if (input[i].includes("Ave Cesar")) {
@@ -72,7 +72,8 @@ function arenaTier(input = []) {
     }
   }
 }
-arenaTier([
+
+solution([
   "Pesho -> Duck -> 400",
   "Julius -> Shield -> 150",
   "Gladius -> Heal -> 200",
