@@ -1,4 +1,3 @@
-// Test #6 (Incorrect answer)
 class VeterinaryClinic {
   constructor(clinicName, capacity) {
     this.clinicName = clinicName;
@@ -21,7 +20,7 @@ class VeterinaryClinic {
       this.clinic[ownerName].push({
         name: petName,
         kind: kind,
-        procedures: procedures,
+        procedures: Array.from(procedures),
       });
     } else {
       this.clinic[ownerName].forEach((obj) => {
@@ -48,22 +47,28 @@ class VeterinaryClinic {
   }
 
   onLeaving(ownerName, petName) {
+    if (!this.clients.includes(ownerName)) {
+      throw new Error(`Sorry, there is no such client!`);
+    }
     let petExist = false;
-    this.clinic[ownerName].forEach((obj) => {
-      if (obj.name === petName) {
+    for (let i = 0; i < this.clinic[ownerName].length; i++) {
+      if (this.clinic[ownerName][i].name === petName) {
         petExist = true;
+        break;
       }
-    });
+    }
     let proceduresExist = true;
-    this.clinic[ownerName].forEach((obj) => {
-      if (obj.name === petName && obj.procedures.length === 0) {
+    for (let i = 0; i < this.clinic[ownerName].length; i++) {
+      if (
+        this.clinic[ownerName][i].name === petName &&
+        this.clinic[ownerName][i].procedures.length === 0
+      ) {
         proceduresExist = false;
+        break;
       }
-    });
+    }
     if (petExist === false || proceduresExist === false) {
       throw new Error(`Sorry, there are no procedures for ${petName}!`);
-    } else if (!this.clients.includes(ownerName)) {
-      throw new Error(`Sorry, there is no such client!`);
     } else {
       this.clinic[ownerName].forEach((obj) => {
         if (obj.name === petName) {
