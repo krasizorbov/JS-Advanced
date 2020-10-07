@@ -25,6 +25,7 @@ function solution(input = []) {
     console.log(`${m[0]} => ${m[1]}`);
   }
 }
+
 solution([
   "Kiwi => 234",
   "Pear => 2345",
