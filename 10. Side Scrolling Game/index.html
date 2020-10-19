@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Wizard Game</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Softuni Wizard</title>
 </head>
 <body>
     <div class="game-section">
+        <div class="game-score"><span class="points">0</span> pts.</div>
         <div class="game-start">Press to Play!</div>
-        <div class="game-score"><span class="points">0</span>pts.</div>
         <div class="game-area"></div>
         <div class="game-over"></div>
+        <div class="game-over hide">Game Over ;(</div>
     </div>
     <script src="main.js"></script>
+
+    <script src="./tools.js"></script>
+    <script src="./config.js"></script>
+    <script src="./engine.js"></script>
+    <script src="./renderer.js"></script>
 </body>
+</html>
 </html>
