@@ -5,7 +5,6 @@ const gameScore = document.querySelector(".game-score");
 const gamePoints = gameScore.querySelector(".points");
 
 gameStart.addEventListener("click", onGameStart);
-
 document.addEventListener("keydown", onKeyDown);
 document.addEventListener("keyup", onKeyUp);
 
@@ -18,14 +17,17 @@ function onKeyDown(e){
     keys[e.code] = true;
     console.log(keys);
 }
+
 function onKeyUp(e){
     keys[e.code] = false;
     console.log(keys);
 }
+
 function gameAction(){
     console.log('action');
     window.requestAnimationFrame(gameAction);
 }
+
 function onGameStart(){
     gameStart.classList.add("hide");
     const wizard = document.createElement("div");
@@ -42,8 +44,6 @@ function gameAction(timestamp){
     const wizard = document.querySelector(".wizard");
     scene.score++;
 
-    
-
     if (timestamp - scene.lastBugSpawn > game.bugSpawnInterval + 5000 * Math.random()) {
         let bug = document.createElement("div");
     bug.classList.add("bug");
@@ -53,8 +53,6 @@ function gameAction(timestamp){
     gameArea.appendChild(bug);
     scene.lastBugSpawn = timestamp;
     }
-
-
 
     if (timestamp - scene.lastCloudSpawn > game.cloudSpawnInterval + 20000 * Math.random()) {
         let cloud = document.createElement("div");
@@ -85,7 +83,7 @@ function gameAction(timestamp){
     }});
 
     let bugs = document.querySelectorAll(".bug");
-bugs.forEach(b => {
+    bugs.forEach(b => {
     b.x -= game.speed * 3;
     b.style.left = b.x + "px";
     if (b.x + bugs.offsetWidth <= 0) {
@@ -127,14 +125,16 @@ bugs.forEach(b => {
     if (keys.ArrowRight && player.x + player.height < gameArea.offsetWidth) {
         player.x += game.speed * game.movingMultiplier;
     }
+
     wizard.style.top = player.y + 'px';
     wizard.style.left = player.x + "px";
     gamePoints.textContent = scene.score;
-    //window.requestAnimationFrame(gameAction);
+
     if (scene.isActiveGame) {
         window.requestAnimationFrame(gameAction);
     }
 }
+
 function addFireBall(){
     let fireBall = document.createElement("div");
     fireBall.classList.add("fire-ball");
