@@ -97,10 +97,8 @@ function gameAction(timestamp){
             scene.score += game.bugKillBonus;
             b.parentElement.removeChild(b);
             fb.parentElement.removeChild(fb);
-        }
+        }})
     })
-    
-})
 
     let isInAir = (player.y + player.height) <= gameArea.offsetHeight;
     if (isInAir) {
